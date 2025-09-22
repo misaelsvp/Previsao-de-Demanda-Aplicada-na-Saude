@@ -28,7 +28,7 @@ Este projeto tem como objetivo desenvolver modelos de previsão de demanda por s
 
 ### Para Iniciantes
 Se você nunca usou Git, GitHub ou VS Code, comece aqui:
-- **[Tutorial de Colaboração](docs/TUTORIAL_COLABORACAO.md)** - Guia completo passo a passo
+- **[Tutorial de Colaboração](docs/TUTORIAL_COLABORACAO.html)** - Guia completo passo a passo
 
 ### Para Quem Já Sabe
 1. Clone o repositório:
