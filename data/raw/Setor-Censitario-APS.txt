@@ -1,0 +1,37 @@
+Codigo	Quantidade	Descrição
+
+V01006		Quantidade de moradores
+V00001 + V00002	Domicilios
+
+Capital Humano: Quanto maior, mais vulnerável	(i1 + i2 + ... + i6) / 6	(Cor: Laranja)
+V00008		Percentual de crianças (até 9 anos)							Demografia
+V01041		Percentual de idosos (70+ anos)								Demografia
+V00901		Percentual de pessoas analfabetas							Demografia
+V00052		Percentual de residência degradada ou inacabada				Domicilio
+V00064		Percentual de domicílios abrigo para morador de rua			Domicilio
+V06004		Percentual de moradores vivendo com < 1/2 salário mínimo	Demografia
+
+
+Infraestrutura Urbana: Quanto maior, mais vulnerável	(i1 + i2 +... + i4) / 4	(Cor: Cinza)
+V00201	0	Percentual de domicílios sem abastecimento de agua 		Domicilio
+V00238	0	Percentual de domicílios sem banheiro			 		Domicilio
+V00314	0	Percentual de domicílios sem rede de esgoto 			Domicilio
+V00401	0	Percentual de domicílios sem coleta de lixo 			Domicilio
+
+Saúde: Quanto maior, mais vulnerável (100% - Indicador Original)	(i1 + i2 + ... + i7) / 7	(Cor: Roxo)
+
+VPB01	0.23	Proporção de gestantes com 6 ou mais consultas de pré-natal
+VPB02	0.36	Proporção de gestantes com realização de exames para sífilis e HIV
+VPB03	0.31	Proporção de gestantes com atendimento odontológico na gestação
+VPB04	0.19	Proporção de mulheres com coleta de citopatológico na APS
+VPB05	0.49	Proporção de crianças de 1 ano vacinadas contra Poliomielite na APS
+VPB06	0.14	Proporção de hipertensos com pressão arterial aferida no semestre
+VPB07	0.15	Proporção de diabéticos com hemoglobina glicada solicitada no semestre
+
+(CH + IU + VS) / 3
+
+Belo Horizonte: 	3218 setores censitários
+Contagem: 			853 setores censitários
+Divinópolis: 		508 setores censitários
+Lagoa Santa: 		224 setores censitários
+Montes Claros: 		819 setores censitários

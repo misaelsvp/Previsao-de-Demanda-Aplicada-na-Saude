@@ -49,12 +49,12 @@ jupyter notebook
 
 ## Status do Projeto
 
-- [x] Organização do repositório
-- [x] Carregamento e limpeza dos dados
-- [x] Análise exploratória inicial
-- [ ] Modelagem preditiva
+- [x] Organização do repositório (Próx. passos: Organizar incluindo novas bases)
+- [x] Carregamento e limpeza dos dados (Próx. passos: Carregar e limpar incluindo novas bases)
+- [x] Análise exploratória inicial (Próx. passos: refazer análise com novos dados) 
+- [ ] Modelagem preditiva (Incluir dados históricos de Censos demográficos: https://www.ibge.gov.br/estatisticas/sociais/trabalho/22827-censo-demografico-2022.html?=&t=downloads)
 - [ ] Validação dos modelos
-- [ ] Documentação final
+- [ ] Documentação final:  https://www.overleaf.com/9969912746gmrxyzcmszyh#202bfe
 
 ## Autores
 

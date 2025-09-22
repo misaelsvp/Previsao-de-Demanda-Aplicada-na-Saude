@@ -1,0 +1,91 @@
+Misael e João,
+
+Usem o link para escreverem o TCC: https://www.overleaf.com/9969912746gmrxyzcmszyh#202bfe
+
+Se quiserem acelerar a escrita com IA, podem se orientar pela apresentação do link: https://www.dropbox.com/scl/fi/goq2h30catwksvrjmzfdu/EPD899-Metodologia-Pesquisa-com-IA.pdf?rlkey=9w3w60806sltigiw3gnoz22w5&e=1&st=1d11mw7y&dl=0
+
+Baixem a planilha Setor Censitário APS, nossa base de dados (334 MB): 
+https://docs.google.com/spreadsheets/d/13Fu8DBc3byNROnFkuwhSQF8HRR2h9tdI/edit?usp=sharing&ouid=102956262135801993308&rtpof=true&sd=true
+
+Por favor, me enviem o link do Github do projeto, pois a reunião no Meet acabou subtamente e perdi o link.
+
+Sobre a estratégia de planejamento em saúde: (Uma base está na planilha Setor-Censitário-APS.xlsx)
+
+A melhor área para definir a demanda por serviços de APS é realmente o Setor Censitário (não a área do IVS, como haviamos pensado inicialmente). Pesquisei e vi que o IVS não incorpora variáveis importantes na Atenção Primária, como doenças crônicas, morbidade, etc., embora considere variáveis relevantes que afetam a saúde, como infraestrutura, renda e educação.
+
+Precisamos selecionar variáveis do Setor Censitário (que é atualmente e formalmente utilizado no planejamento de cobertura de APS) que indiretamente se relacionam aos Determinantes Sociais da Saúde, como:
+
+        Abastecimento de água;
+        Esgoto;
+        Coleta de lixo;
+        Rendimento domiciliar per capita;
+        Alfabetização
+        Escolaridade;
+        Número de moradores por domicílio;
+        Idade média da população;
+        Proporção de crianças;
+        Proporção de idosos.
+
+
+Usei o NotebookLM para fazer uma seleção das 10 variáveis que mais de relacionam à Atenção Primária à Saúde, dentre as 1411 variáveis dos setores censitários. Foram selecionadas as seguintes variáveis:
+
+V00008: Quantidade de crianças de zero a nove anos de idade em Domicílios Particulares Permanentes Ocupados.
+Relevância para a APS: Essencial para o planejamento e execução de ações de saúde materno-infantil, como vacinação, acompanhamento do crescimento e desenvolvimento e prevenção de doenças prevalentes na infância.
+ 
+V01041: Quantidade de pessoas com 70 anos ou mais
+Relevância para a APS: Indicador demográfico chave para direcionar programas de saúde do idoso, manejo de doenças crônicas, cuidados paliativos e promoção da qualidade de vida nesse grupo etário, que frequentemente demanda mais serviços de saúde.
+
+V00111: Domicílios Particulares Permanentes Ocupados que utilizam rede geral de distribuição de água
+Relevância para a APS: O acesso à água tratada é fundamental para prevenir doenças de veiculação hídrica. A ausência deste serviço aponta para riscos à saúde pública que a APS deve abordar, incluindo educação e saneamento básico.
+
+V00201: Domicílios Particulares Permanentes Ocupados onde a água não chega encanada ao domicílio
+Relevância para a APS: Mesmo com acesso à fonte, a falta de água encanada dentro da moradia pode dificultar a higiene pessoal e domiciliar, aumentando a vulnerabilidade a infecções e demandando ações educativas da APS.
+
+V00238: Domicílios Particulares Permanentes Ocupados que não tinham banheiro nem sanitário
+Relevância para a APS: Este é um forte indicador de precariedade sanitária, associado a um alto risco de contaminação e proliferação de doenças infecciosas, como diarreias e parasitoses, exigindo intervenção direta da APS.
+
+V00314: Domicílios Particulares Permanentes Ocupados onde a destinação do esgoto do banheiro ou sanitário ou buraco para dejeções é rio, lago, córrego ou mar
+Relevância para a APS: O descarte inadequado de esgoto em corpos d'água é uma fonte significativa de poluição e propagação de doenças, impactando a saúde da comunidade e exigindo ações de saúde ambiental da APS.
+
+V00401: Domicílios Particulares Permanentes Ocupados onde o lixo é jogado em terreno baldio, encosta ou área pública
+Relevância para a APS: O descarte irregular de resíduos cria ambientes propícios para vetores de doenças (como mosquitos e roedores) e contribui para a poluição. A APS atua na educação e mobilização comunitária para a gestão adequada do lixo.
+
+V00052: Domicílios Particulares Permanentes Ocupados, Tipo de espécie é estrutura residencial permanente degradada ou inacabada
+Relevância para a APS: Moradias em condições degradadas ou inacabadas são associadas a riscos de doenças respiratórias, acidentes domésticos, problemas de saúde mental e agravamento de condições crônicas, sendo um determinante social de saúde crucial para a APS.
+
+V00901: Morador com 15 anos ou mais que não sabe ler e escrever
+Relevância para a APS: O analfabetismo limita a capacidade dos indivíduos de compreender informações de saúde, aderir a tratamentos e buscar serviços, tornando-os mais vulneráveis a agravos de saúde e dificultando as estratégias de educação em saúde da APS.
+
+V00064: Domicílios Coletivos Com Morador, do tipo abrigo, albergue ou casa de passagem para população em situação de rua
+Relevância para a APS: A presença desses domicílios indica a existência de uma população em situação de rua, que possui múltiplas e complexas necessidades de saúde (físicas e mentais) e frequentemente enfrenta barreiras de acesso aos serviços, exigindo abordagens específicas e ativas da APS.
+
+Vamos combinar esses 10 indicadores do Setor Censitário com os 7 indicadores principais da APS do Programa Previne Brasil, que embora seja um modelo de financiamento das APS, nós vamos utilizá-lo apenas com o intuito de determinar um peso para definir necessidades em saúde de cada setor censitário. Os 7 indicadores do Previne engloba os eixos saúde da mulher, saúde bucal, saúde da criança e doenças crônicas e estão disponíveis em:
+
+        Proporção de gestantes com 6 ou mais consultas de pré-natal
+        Proporção de gestantes com realização de exames para sífilis e HIV
+        Proporção de gestantes com atendimento odontológico na gestação
+        Proporção de mulheres com coleta de citopatológico na APS
+        Proporção de crianças de 1 ano vacinadas contra Poliomielite na APS
+        Proporção de hipertensos com pressão arterial aferida no semestre
+        Proporção de diabéticos com hemoglobina glicada solicitada no semestre
+
+
+(Faremos esse índice invertido, 1- X%, para ficar alinhado aos 10 índices anteriores)
+
+https://sisab.saude.gov.br/paginas/acessoRestrito/relatorio/federal/indicadores/indicadorPainel.xhtml
+
+Cada indicador é apenas por município, portando precisamos aplicá-lo a todos as regiões censitárias de cada município.
+
+Nossa próxima reunião ficou para :
+
+TCC - Misael e João
+Sexta-feira, 3 de outubro · 11:00 – 12:00
+Fuso horário: America/Sao_Paulo
+Como participar do Google Meet
+Link da videochamada: https://meet.google.com/fhz-pgvo-yte
+
+Apresentem as análises e a evolução dos indicadores no tempo para cada setor censitário, para depois modelarmos a previsão de demanda.
+Me apresentem os resultados na próxima reunião.
+
+Censos demográficos:
+https://www.ibge.gov.br/estatisticas/sociais/trabalho/22827-censo-demografico-2022.html?=&t=downloads
