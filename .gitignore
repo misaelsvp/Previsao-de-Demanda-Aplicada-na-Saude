@@ -136,6 +136,22 @@ data/outputs/*.png
 data/outputs/*.jpg
 data/outputs/*.pdf
 
+# Large GeoJSON files (use Git LFS or split them)
+# Ignorando todos os arquivos GeoJSON grandes, exceto setores_censitarios_real.geojson
+docs/data/*.geojson
+!docs/data/setores_censitarios_real.geojson
+docs/_site/
+docs/.jekyll-cache/
+docs/.sass-cache/
+docs/vendor/
+docs/node_modules/
+
+# Shapefiles (too large for GitHub)
+data/shapefile/*.shp
+data/shapefile/*.dbf
+data/shapefile/*.shx
+data/shapefile/*.part*.shp
+
 # Keep directory structure
 !data/raw/.gitkeep
 !data/processed/.gitkeep

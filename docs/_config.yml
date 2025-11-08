@@ -1,0 +1,87 @@
+title: "TCC - Previsão de Demanda Aplicada na Saúde"
+description: "Trabalho de Conclusão de Curso - Análise de Vulnerabilidade Social e Demanda por Serviços de Atenção Primária à Saúde"
+author: "Estudante TCC"
+
+# Configurações básicas
+baseurl: ""
+url: ""
+
+# Processamento
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Configurações de coleções
+collections:
+  municipios:
+    output: true
+    permalink: /:name/
+
+# Configurações de dados
+data_dir: data
+
+# Excluir arquivos desnecessários
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - "TUTORIAL_COLABORACAO.html"
+  - "TUTORIAL_COLABORACAO.md"
+  - "DEPLOYMENT.md"
+  - "data/setores_censitarios.geojson"
+
+# Configurações específicas do projeto
+municipios_analisados:
+  - nome: "Belo Horizonte"
+    codigo: "3106200"
+    populacao: 2315560
+    setores: 3218
+  - nome: "Contagem"
+    codigo: "3118601"
+    populacao: 621865
+    setores: 853
+  - nome: "Divinópolis"
+    codigo: "3122306"
+    populacao: 231091
+    setores: 508
+  - nome: "Lagoa Santa"
+    codigo: "3137601"
+    populacao: 66744
+    setores: 224
+
+indicadores_previne_brasil:
+  - codigo: "VPB01"
+    nome: "Gestantes com 6+ consultas pré-natal"
+    descricao: "Percentual de gestantes com 6 ou mais consultas de pré-natal"
+  - codigo: "VPB02"
+    nome: "Crianças com vacinação em dia"
+    descricao: "Percentual de crianças com vacinação em dia"
+  - codigo: "VPB03"
+    nome: "Hipertensos com PA aferida"
+    descricao: "Percentual de hipertensos com pressão arterial aferida"
+  - codigo: "VPB04"
+    nome: "Diabéticos com HbA1c dosada"
+    descricao: "Percentual de diabéticos com HbA1c dosada"
+  - codigo: "VPB05"
+    nome: "Mulheres com citologia oncótica"
+    descricao: "Percentual de mulheres com citologia oncótica"
+  - codigo: "VPB06"
+    nome: "Crianças com crescimento acompanhado"
+    descricao: "Percentual de crianças com crescimento acompanhado"
+  - codigo: "VPB07"
+    nome: "Idosos com avaliação multidimensional"
+    descricao: "Percentual de idosos com avaliação multidimensional"
+
+# Configurações de desenvolvimento
+incremental: false
+livereload: true
