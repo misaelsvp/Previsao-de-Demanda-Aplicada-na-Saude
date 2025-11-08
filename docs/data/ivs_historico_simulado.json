@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "descricao": "Dados históricos do IVS para as 6 cidades de MG baseados nos Censos Demográficos do IBGE",
+        "descricao": "Dados históricos do IVS baseados nos Censos Demográficos do IBGE",
         "fonte": "IBGE - Censos Demográficos",
         "anos": [
             1980,
