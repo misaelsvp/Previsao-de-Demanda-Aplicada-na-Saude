@@ -60,13 +60,19 @@ Inclui estatísticas descritivas por período, análise de distribuições tempo
 
 ## Cálculo dos Índices de Vulnerabilidade
 
-Os índices de vulnerabilidade social foram calculados com base na metodologia do **IPEA (Instituto de Pesquisa Econômica Aplicada)**, adaptada para os dados censitários disponíveis.
+**Importante:** Nossa metodologia não é o IVS do IPEA, mas a nossa própria metodologia, que contém dados que o IPEA não contempla. A metodologia foi inspirada no cálculo do IVS do IPEA, mas não é a do IPEA.
 
-### Dimensões dos Índices
+Os índices de vulnerabilidade social foram calculados com base em uma metodologia inspirada no **IPEA (Instituto de Pesquisa Econômica Aplicada)**, adaptada e expandida para os dados censitários disponíveis e indicadores específicos de saúde.
 
-Foram calculados três índices de vulnerabilidade social, cada um representando uma dimensão específica:
+### Índice de Vulnerabilidade em Saúde
 
-#### 1. Índice de Capital Humano
+O **Índice de Vulnerabilidade em Saúde** é o índice principal, resultante da combinação dos três sub-índices abaixo.
+
+### Dimensões dos Índices (Sub-índices)
+
+Foram calculados três sub-índices de vulnerabilidade social, cada um representando uma dimensão específica:
+
+#### 1. Capital Humano
 
 Mede a capacidade das pessoas em termos de educação, qualificação e condições de trabalho.
 
@@ -74,7 +80,7 @@ Mede a capacidade das pessoas em termos de educação, qualificação e condiç�
 
 **Fórmula:** Média ponderada das variáveis normalizadas (0 a 1)
 
-#### 2. Índice de Infraestrutura Urbana
+#### 2. Infraestrutura Urbana
 
 Avalia a disponibilidade e qualidade de infraestrutura e serviços urbanos.
 
@@ -82,13 +88,19 @@ Avalia a disponibilidade e qualidade de infraestrutura e serviços urbanos.
 
 **Fórmula:** Média ponderada das variáveis normalizadas (0 a 1)
 
-#### 3. Índice de Vulnerabilidade em Saúde
+#### 3. Saúde
 
 Mede condições relacionadas à saúde e acesso a serviços de saúde.
 
 **Variáveis incluídas:** Densidade de unidades de saúde, cobertura de atenção primária, indicadores de mortalidade, acesso a medicamentos e condições de habitação relacionadas à saúde.
 
 **Fórmula:** Média ponderada das variáveis normalizadas (0 a 1)
+
+### Cálculo do Índice Principal
+
+O **Índice de Vulnerabilidade em Saúde** é calculado como a média aritmética dos três sub-índices:
+
+**Fórmula:** IVS = (Capital Humano + Infraestrutura Urbana + Saúde) / 3
 
 ### Normalização dos Índices
 
@@ -145,3 +157,9 @@ As previsões consideram tendências históricas identificadas, padrões de evol
 ## Considerações Éticas
 
 Uso exclusivo de dados públicos e agregados. Respeito à privacidade (dados anonimizados). Conformidade com LGPD. Transparência na metodologia.
+
+## Metodologia de Machine Learning
+
+Para o processo de backcasting e previsão de indicadores de saúde, foi desenvolvida uma metodologia específica baseada em algoritmos de aprendizado de máquina.
+
+[Ver Metodologia de Machine Learning e Backcasting]({{ '/metodologia_ml' | relative_url }})

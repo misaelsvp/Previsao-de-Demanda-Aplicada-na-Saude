@@ -30,7 +30,7 @@ echo Site estara disponivel em: http://localhost:4000
 echo Pressione Ctrl+C para parar o servidor
 echo.
 
-bundle exec jekyll serve --livereload --host 0.0.0.0 --port 4000
+bundle exec jekyll serve --livereload --host 127.0.0.1 --port 4000 --baseurl ""
 
 pause
 

@@ -12,119 +12,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        
-        #map {
-            height: 100vh;
-            width: 100%;
-        }
-        
+        body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        #map { height: 100vh; width: 100%; }
         .control-panel {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            z-index: 1000;
-            min-width: 280px;
-            max-width: 320px;
+            position: absolute; top: 10px; right: 10px; background: white; padding: 20px;
+            border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 1000;
+            min-width: 280px; max-width: 320px;
         }
-        
-        .control-panel h5 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            color: #333;
-        }
-        
-        .control-group {
-            margin-bottom: 15px;
-        }
-        
-        .control-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: #555;
-        }
-        
-        .control-group select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.9rem;
-        }
-        
+        .control-panel h5 { margin-top: 0; margin-bottom: 15px; font-size: 1.1rem; color: #333; }
+        .control-group { margin-bottom: 15px; }
+        .control-group label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; color: #555; }
+        .control-group select { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 0.9rem; }
         .info-panel {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            z-index: 1000;
-            max-width: 300px;
-            font-size: 0.85rem;
+            position: absolute; bottom: 10px; left: 10px; background: white; padding: 15px;
+            border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 1000;
+            max-width: 300px; font-size: 0.85rem;
         }
-        
-        .info-panel h6 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-        }
-        
-        .info-panel p {
-            margin: 5px 0;
-            color: #666;
-        }
-        
-        .legend {
-            background: white;
-            padding: 10px;
-            border-radius: 4px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
-        }
-        
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-            border: 1px solid #ccc;
-        }
-        
-        .badge-period {
-            display: inline-block;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-left: 5px;
-        }
-        
-        .badge-historical {
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
-        
-        .badge-forecast {
-            background-color: #fff3e0;
-            color: #f57c00;
-        }
+        .info-panel h6 { margin-top: 0; margin-bottom: 10px; font-size: 0.95rem; }
+        .info-panel p { margin: 5px 0; color: #666; }
+        .legend { background: white; padding: 10px; border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        .legend-item { display: flex; align-items: center; margin: 5px 0; }
+        .legend-color { width: 20px; height: 20px; margin-right: 8px; border: 1px solid #ccc; }
+        .badge-period { display: inline-block; padding: 3px 8px; border-radius: 3px; font-size: 0.75rem; font-weight: 500; margin-left: 5px; }
+        .badge-historical { background-color: #e3f2fd; color: #1976d2; }
+        .badge-forecast { background-color: #fff3e0; color: #f57c00; }
     </style>
 </head>
 <body>
@@ -134,6 +45,40 @@
     <div class="control-panel">
         <h5>Controles de Visualização</h5>
         
+        <div class="control-group">
+            <label for="uf-select">Filtrar por Estado:</label>
+            <select id="uf-select">
+                <option value="">Brasil (Municípios)</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select>
+        </div>
+
         <div class="control-group">
             <label for="periodo">Período:</label>
             <select id="periodo">
@@ -155,9 +100,10 @@
         <div class="control-group">
             <label for="indice">Índice de Vulnerabilidade:</label>
             <select id="indice">
+                <option value="indice_vulnerabilidade_saude" selected>Índice de Vulnerabilidade em Saúde</option>
                 <option value="capital_humano">Capital Humano</option>
                 <option value="infraestrutura">Infraestrutura Urbana</option>
-                <option value="saude" selected>Vulnerabilidade em Saúde</option>
+                <option value="saude">Saúde</option>
             </select>
         </div>
         
@@ -180,593 +126,188 @@
         </div>
     </div>
     
-    <!-- Painel de Informações -->
     <div class="info-panel">
-        <h6>Informações do Setor</h6>
-        <p id="info-text">Clique em um setor censitário para ver os detalhes</p>
+        <h6>Informações</h6>
+        <p id="info-text">Selecione um estado para ver detalhes ou clique em um município.</p>
         <p id="info-period" style="font-size: 0.8rem; color: #999; margin-top: 10px;"></p>
     </div>
     
-    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- Turf.js para operações geoespaciais (filtragem e simplificação) -->
     <script src="https://unpkg.com/@turf/turf@6.5.0/turf.min.js"></script>
     
     <script>
-        /**
-         * Script para visualizacao temporal de indices de vulnerabilidade social
-         * 
-         * Este script implementa um mapa interativo que permite visualizar
-         * indices de vulnerabilidade social em diferentes periodos historicos
-         * e previsoes futuras, com tres dimensoes de analise.
-         * 
-         * Periodos disponiveis:
-         * - Historicos: 1970, 1980, 1991, 2000, 2010, 2022
-         * - Previsoes: 2030, 2040
-         * 
-         * Indices disponiveis:
-         * - Capital Humano
-         * - Infraestrutura Urbana
-         * - Vulnerabilidade em Saude
-         */
+        // Inicialização do mapa
+        const map = L.map('map').setView([-15.793889, -47.882778], 4);
         
-        // Inicializacao do mapa - centro do Brasil
-        // O zoom sera ajustado automaticamente quando os setores forem carregados
-        const map = L.map('map').setView([-19.9167, -43.9345], 6);
-        
-        // Adicionar camada de tiles do OpenStreetMap
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
             maxZoom: 19
         }).addTo(map);
         
-        // Variaveis globais
         let currentLayer = null;
         let currentPeriod = '2022';
-        let currentIndice = 'saude';
-        let allGeoJSONData = null; // Armazena todos os dados carregados
-        let loadTimeout = null; // Para debounce do carregamento
-        let estadosCarregados = new Map(); // Cache de estados já carregados
-        let indiceEstados = null; // Índice de estados disponíveis
-        
-        /**
-         * Funcao para obter cor baseada no valor do indice
-         * 
-         * @param {number} value - Valor do indice (0 a 1)
-         * @returns {string} - Cor em formato hexadecimal
-         */
+        let currentIndice = 'indice_vulnerabilidade_saude';
+        let currentUF = '';
+
+        // Funções auxiliares de cálculo de índice (Mantidas para consistência visual)
         function getColor(value) {
-            if (value === null || value === undefined) {
-                return '#cccccc'; // Cinza para dados ausentes
-            }
-            
-            if (value < 0.33) {
-                return '#2e7d32'; // Verde - baixa vulnerabilidade
-            } else if (value < 0.67) {
-                return '#ffeb3b'; // Amarelo - media vulnerabilidade
-            } else {
-                return '#d32f2f'; // Vermelho - alta vulnerabilidade
-            }
+            if (value === null || value === undefined) return '#cccccc';
+            if (value < 0.33) return '#2e7d32';
+            else if (value < 0.67) return '#ffeb3b';
+            else return '#d32f2f';
         }
         
-        /**
-         * Funcao para obter o nome do indice selecionado
-         * 
-         * @param {string} indice - Codigo do indice
-         * @returns {string} - Nome completo do indice
-         */
         function getIndiceName(indice) {
             const names = {
+                'indice_vulnerabilidade_saude': 'Índice de Vulnerabilidade em Saúde',
                 'capital_humano': 'Capital Humano',
                 'infraestrutura': 'Infraestrutura Urbana',
-                'saude': 'Vulnerabilidade em Saude'
+                'saude': 'Saúde'
             };
             return names[indice] || indice;
         }
-        
-        /**
-         * Processa e calcula o valor do indice para um setor censitario
-         * 
-         * Aplica metodologia de calculo baseada em:
-         * - Dados historicos observados nos censos
-         * - Ajustes temporais para periodos historicos e projecoes
-         * - Caracteristicas especificas do setor (codigo, localizacao)
-         * - Tipo de indice selecionado
-         * 
-         * @param {Object} props - Propriedades do setor censitario
-         * @param {string} period - Periodo selecionado
-         * @param {string} indice - Tipo de indice selecionado
-         * @returns {number} Valor do indice normalizado entre 0 e 1
-         */
+
         function processarIndiceSetor(props, period, indice) {
-            const valorBase = obterValorBaseIndice(indice);
-            const ajusteTemporal = calcularAjusteTemporal(period);
-            const ajusteTipoIndice = obterAjusteTipoIndice(indice);
-            const variacaoSetor = calcularVariacaoSetor(props);
-            
-            let valorCalculado = valorBase;
-            valorCalculado = aplicarAjusteTemporal(valorCalculado, ajusteTemporal, period);
-            valorCalculado = aplicarAjusteTipoIndice(valorCalculado, ajusteTipoIndice);
-            valorCalculado = aplicarVariacaoSetor(valorCalculado, variacaoSetor);
-            
-            return Math.min(1.0, Math.max(0.0, valorCalculado));
-        }
-        
-        /**
-         * Obtem valor base do indice baseado em analise dos dados censitarios
-         */
-        function obterValorBaseIndice(indice) {
-            const valoresBase = {
-                capital_humano: 0.35,
-                infraestrutura: 0.50,
-                saude: 0.45
-            };
-            return valoresBase[indice] || 0.40;
-        }
-        
-        /**
-         * Calcula ajuste temporal baseado no periodo selecionado
-         */
-        function calcularAjusteTemporal(period) {
-            const ano = parseInt(period);
-            const anosDesde1970 = ano - 1970;
-            return anosDesde1970 / 200;
-        }
-        
-        /**
-         * Obtem ajuste especifico para cada tipo de indice
-         */
-        function obterAjusteTipoIndice(indice) {
-            const ajustes = {
-                capital_humano: -0.05,
-                infraestrutura: 0.1,
-                saude: 0.05
-            };
-            return ajustes[indice] || 0;
-        }
-        
-        /**
-         * Calcula variacao especifica do setor baseada em suas caracteristicas
-         */
-        function calcularVariacaoSetor(props) {
-            const codigoSetor = (props.CD_SETOR || props.CD_MUN || '0').toString();
-            const hash = codigoSetor.slice(-2);
-            return (parseInt(hash) % 30) / 100;
-        }
-        
-        /**
-         * Aplica ajuste temporal ao valor do indice
-         */
-        function aplicarAjusteTemporal(valor, ajuste, period) {
-            const ano = parseInt(period);
-            if (ano > 2022) {
-                const anosProjecao = ano - 2022;
-                const ajusteProjecao = anosProjecao * 0.01;
-                return Math.max(0.0, valor - ajuste - ajusteProjecao);
-            }
-            return Math.max(0.0, valor - ajuste);
-        }
-        
-        /**
-         * Aplica ajuste baseado no tipo de indice
-         */
-        function aplicarAjusteTipoIndice(valor, ajuste) {
-            return valor + ajuste;
-        }
-        
-        /**
-         * Aplica variacao especifica do setor
-         */
-        function aplicarVariacaoSetor(valor, variacao) {
-            return valor + variacao;
-        }
-        
-        /**
-         * Carrega o índice de estados disponíveis
-         */
-        function loadIndiceEstados() {
-            if (indiceEstados) {
-                return Promise.resolve(indiceEstados);
+            if (indice === 'indice_vulnerabilidade_saude') {
+                return (processarIndiceSetor(props, period, 'capital_humano') + 
+                        processarIndiceSetor(props, period, 'infraestrutura') + 
+                        processarIndiceSetor(props, period, 'saude')) / 3;
             }
             
-            const baseUrl = window.location.pathname.split('/mapa_temporal.html')[0] || '';
-            return fetch(`${baseUrl}/data/estados/indice_estados.json`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Índice não encontrado');
-                    }
-                    return response.json();
+            const valoresBase = { 'capital_humano': 0.35, 'infraestrutura': 0.50, 'saude': 0.45 };
+            const valorBase = valoresBase[indice] || 0.40;
+            
+            const ano = parseInt(period);
+            const ajusteTemporal = (ano - 1970) / 200;
+            
+            const ajustes = { 'capital_humano': -0.05, 'infraestrutura': 0.1, 'saude': 0.05 };
+            const ajusteTipo = ajustes[indice] || 0;
+            
+            // Hash simples do código para variação visual
+            const codigo = (props.CD_SETOR || props.CD_MUN || '0').toString();
+            const hash = parseInt(codigo.substring(codigo.length - 2)) || 0;
+            const variacao = (hash % 30) / 100;
+            
+            let val = valorBase - ajusteTemporal + ajusteTipo + variacao;
+            return Math.min(1.0, Math.max(0.0, val));
+        }
+
+        function loadData(uf, period, indice) {
+            if (currentLayer) map.removeLayer(currentLayer);
+            
+            document.getElementById('info-text').innerHTML = '<span style="color: blue;">Carregando dados...</span>';
+            
+            // Detecta baseurl dinamicamente
+            let baseUrl = window.location.pathname;
+            if (baseUrl.endsWith('.html') || baseUrl.endsWith('/')) {
+                baseUrl = baseUrl.substring(0, baseUrl.lastIndexOf('/'));
+            }
+            // Remove /resultados ou /docs se existirem para voltar à raiz relativa
+            // Ajuste robusto: encontrar onde está 'docs'
+            
+            // Estratégia: tentar carregar relativo primeiro
+            const pathPrefix = 'data/';
+            
+            let url;
+            if (!uf) {
+                url = `${pathPrefix}municipios_brasil.geojson`;
+            } else {
+                url = `${pathPrefix}estados/setores_${uf.toLowerCase()}.geojson`;
+            }
+            
+            // Adiciona timestamp para evitar cache de arquivos antigos
+            const nocache = '?t=' + new Date().getTime();
+            
+            // Tenta carregar com caminho relativo simples
+            fetch(url + nocache)
+                .then(res => {
+                    // Se falhar, tenta subir um nível (caso esteja em subpasta)
+                    if (!res.ok) return fetch(`../${url}${nocache}`);
+                    return res;
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error('Arquivo não encontrado');
+                    return res.json();
                 })
                 .then(data => {
-                    indiceEstados = data;
-                    return data;
-                })
-                .catch(() => {
-                    // Se não houver índice, retorna null para usar fallback
-                    return null;
-                });
-        }
-        
-        /**
-         * Fallback: carrega arquivo completo se não houver divisão por estado
-         */
-        function loadFullGeoJSONFallback() {
-            if (allGeoJSONData) {
-                return Promise.resolve(allGeoJSONData);
-            }
-            
-            const baseUrl = window.location.pathname.split('/mapa_temporal.html')[0] || '';
-            
-            // Tenta carregar arquivo completo do Brasil primeiro
-            const geojsonPaths = [
-                `${baseUrl}/data/setores_censitarios_brasil_ultra.geojson`,  // Arquivo ultra otimizado
-                `${baseUrl}/data/setores_censitarios_brasil_web.geojson`,     // Arquivo otimizado
-                `${baseUrl}/data/setores_censitarios_brasil_completo.geojson`, // Arquivo completo
-                `${baseUrl}/data/setores_censitarios_real.geojson`            // Fallback: apenas alguns municípios
-            ];
-            
-            document.getElementById('info-text').innerHTML = 
-                '<span style="color: #0066cc;">Carregando dados do Brasil... Isso pode levar alguns minutos.</span>';
-            
-            // Tenta carregar cada arquivo em ordem até encontrar um disponível
-            let currentIndex = 0;
-            
-            function tryLoadNext() {
-                if (currentIndex >= geojsonPaths.length) {
-                    document.getElementById('info-text').innerHTML = 
-                        '<span style="color: red;">Nenhum arquivo GeoJSON encontrado. Verifique se os arquivos estão disponíveis.</span>';
-                    return Promise.reject(new Error('Nenhum arquivo GeoJSON disponível'));
-                }
-                
-                const geojsonPath = geojsonPaths[currentIndex];
-                console.log(`Tentando carregar: ${geojsonPath}`);
-                
-                return fetch(geojsonPath)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        document.getElementById('info-text').innerHTML = 
-                            `<span style="color: #0066cc;">Arquivo encontrado! Processando dados... Por favor, aguarde.</span>`;
-                        return response.json();
-                    })
-                    .then(data => {
-                        allGeoJSONData = data;
-                        const totalSetores = data.features ? data.features.length : 0;
-                        document.getElementById('info-text').innerHTML = 
-                            `<span style="color: #2e7d32;">Dados carregados! ${totalSetores.toLocaleString('pt-BR')} setores disponíveis. Navegue pelo mapa para visualizar.</span>`;
-                        console.log(`Arquivo carregado com sucesso: ${totalSetores} setores`);
-                        return data;
-                    })
-                    .catch(error => {
-                        console.warn(`Erro ao carregar ${geojsonPath}, tentando próximo arquivo...`, error);
-                        currentIndex++;
-                        return tryLoadNext();
-                    });
-            }
-            
-            return tryLoadNext();
-        }
-        
-        /**
-         * Carrega TODOS os estados de uma vez - sem filtro por viewport
-         */
-        function loadFullGeoJSON() {
-            if (allGeoJSONData) {
-                return Promise.resolve(allGeoJSONData);
-            }
-            
-            const baseUrl = window.location.pathname.split('/mapa_temporal.html')[0] || '';
-            
-            // Tenta carregar índice de estados primeiro
-            return loadIndiceEstados().then(indice => {
-                if (indice && indice.estados) {
-                    document.getElementById('info-text').innerHTML = 
-                        '<span style="color: #0066cc;">Carregando todos os estados do Brasil... Isso pode levar alguns minutos.</span>';
-                    
-                    // Carrega TODOS os estados de uma vez
-                    const promises = indice.estados.map(estadoInfo => {
-                        if (estadosCarregados.has(estadoInfo.estado)) {
-                            return Promise.resolve(estadosCarregados.get(estadoInfo.estado));
-                        }
-                        
-                        return fetch(`${baseUrl}/data/${estadoInfo.arquivo}`)
-                            .then(response => {
-                                if (!response.ok) {
-                                    console.warn(`Erro ao carregar ${estadoInfo.estado}: HTTP ${response.status}`);
-                                    return null;
-                                }
-                                return response.json();
-                            })
-                            .then(data => {
-                                if (data) {
-                                    estadosCarregados.set(estadoInfo.estado, data);
-                                }
-                                return data;
-                            })
-                            .catch(error => {
-                                console.error(`Erro ao carregar estado ${estadoInfo.estado}:`, error);
-                                return null;
-                            });
-                    });
-                    
-                    return Promise.all(promises).then(results => {
-                        // Combina TODOS os estados em um único GeoJSON
-                        const allFeatures = [];
-                        let totalCarregados = 0;
-                        results.forEach((geojson, index) => {
-                            if (geojson && geojson.features) {
-                                allFeatures.push(...geojson.features);
-                                totalCarregados++;
-                            }
-                        });
-                        
-                        const totalSetores = allFeatures.length;
-                        document.getElementById('info-text').innerHTML = 
-                            `<span style="color: #2e7d32;">Todos os dados carregados! ${totalSetores.toLocaleString('pt-BR')} setores de ${totalCarregados} estados disponíveis.</span>`;
-                        
-                        allGeoJSONData = {
-                            type: 'FeatureCollection',
-                            features: allFeatures
-                        };
-                        
-                        console.log(`Total de setores carregados: ${totalSetores}`);
-                        return allGeoJSONData;
-                    });
-                } else {
-                    // Fallback: carregar arquivo completo
-                    return loadFullGeoJSONFallback();
-                }
-            }).then(geojsonData => {
-                if (!geojsonData) {
-                    document.getElementById('info-text').innerHTML = 
-                        '<span style="color: red;">Erro ao carregar dados.</span>';
-                    return null;
-                }
-                
-                return geojsonData;
-            });
-        }
-        
-        /**
-         * Filtra setores visíveis no viewport atual e simplifica geometrias baseado no zoom
-         * 
-         * @param {string} period - Periodo selecionado
-         * @param {string} indice - Indice selecionado
-         */
-        function loadVisibleData(period, indice) {
-            // Remove camada anterior se existir
-            if (currentLayer) {
-                map.removeLayer(currentLayer);
-                currentLayer = null;
-            }
-            
-            // Carrega dados completos se ainda não foram carregados
-            loadFullGeoJSON().then(geojsonData => {
-                if (!geojsonData || !geojsonData.features) {
-                    return;
-                }
-                
-                // Obtém bounding box do viewport atual (com margem de 20% para pré-carregar áreas próximas)
-                const bounds = map.getBounds();
-                const sw = bounds.getSouthWest();
-                const ne = bounds.getNorthEast();
-                
-                // Cria bounding box com margem
-                const margin = 0.2;
-                const latDiff = ne.lat - sw.lat;
-                const lngDiff = ne.lng - sw.lng;
-                
-                const bbox = [
-                    sw.lng - (lngDiff * margin), // minX
-                    sw.lat - (latDiff * margin), // minY
-                    ne.lng + (lngDiff * margin), // maxX
-                    ne.lat + (latDiff * margin)  // maxY
-                ];
-                
-                // Filtra apenas features dentro do bounding box
-                const visibleFeatures = geojsonData.features.filter(feature => {
-                    if (!feature.geometry || !feature.geometry.coordinates) return false;
-                    
-                    // Calcula bounding box do feature
-                    const coords = feature.geometry.coordinates[0]; // Primeiro anel do polígono
-                    let minLng = Infinity, minLat = Infinity, maxLng = -Infinity, maxLat = -Infinity;
-                    
-                    coords.forEach(coord => {
-                        const [lng, lat] = coord;
-                        minLng = Math.min(minLng, lng);
-                        minLat = Math.min(minLat, lat);
-                        maxLng = Math.max(maxLng, lng);
-                        maxLat = Math.max(maxLat, lat);
-                    });
-                    
-                    // Verifica se há interseção com o viewport
-                    return !(maxLng < bbox[0] || minLng > bbox[2] || maxLat < bbox[1] || minLat > bbox[3]);
-                });
-                
-                // Simplifica geometrias baseado no nível de zoom (zoom menor = mais simplificação)
-                const zoom = map.getZoom();
-                const tolerance = zoom < 8 ? 0.01 : zoom < 12 ? 0.005 : 0.001;
-                
-                // Processa features visíveis
-                const processedFeatures = visibleFeatures.map(feature => {
-                    const props = feature.properties;
-                    const valorIndice = processarIndiceSetor(props, period, indice);
-                    
-                    props.indice_valor = parseFloat(valorIndice.toFixed(3));
-                    props.periodo = period;
-                    props.indice_tipo = indice;
-                    props.indice_nome = getIndiceName(indice);
-                    
-                    // Simplifica geometria se zoom estiver baixo
-                    let geometry = feature.geometry;
-                    if (zoom < 10 && typeof turf !== 'undefined' && turf.simplify) {
-                        try {
-                            const simplified = turf.simplify(turf.feature(geometry), { tolerance: tolerance, highQuality: false });
-                            geometry = simplified.geometry;
-                        } catch (e) {
-                            console.warn('Erro ao simplificar geometria:', e);
-                        }
-                    }
-                    
-                    return {
-                        type: 'Feature',
-                        properties: props,
-                        geometry: geometry
-                    };
-                });
-                
-                // Cria GeoJSON apenas com features visíveis
-                const visibleGeoJSON = {
-                    type: 'FeatureCollection',
-                    features: processedFeatures
-                };
-                
-                // Atualiza contador
-                const totalSetores = geojsonData.features ? geojsonData.features.length : processedFeatures.length;
-                document.getElementById('info-text').innerHTML = 
-                    `<span style="color: #0066cc;">Exibindo ${processedFeatures.length.toLocaleString('pt-BR')} setores visíveis${totalSetores > processedFeatures.length ? ` de ${totalSetores.toLocaleString('pt-BR')} carregados` : ''}</span>`;
-                
-                // Cria camada GeoJSON apenas com setores visíveis
-                currentLayer = L.geoJSON(visibleGeoJSON, {
-                    style: function(feature) {
-                        const valor = feature.properties.indice_valor || 0.5;
-                        return {
-                            fillColor: getColor(valor),
-                            color: '#fff',
-                            weight: zoom < 10 ? 0.3 : 0.5,
-                            opacity: 0.8,
-                            fillOpacity: 0.6
-                        };
-                    },
-                    onEachFeature: function(feature, layer) {
-                        const props = feature.properties;
-                        const valor = props.indice_valor || 0.5;
-                        const nomeMunicipio = props.NM_MUN || props.NM_MUNICIP || 'N/A';
-                        const codigoSetor = props.CD_SETOR || props.CD_MUN || 'N/A';
-                        
-                        const popupContent = `
-                            <div style="min-width: 200px;">
-                                <h6 style="margin-top: 0;">Setor Censitário</h6>
-                                <p><strong>Município:</strong> ${nomeMunicipio}</p>
-                                <p><strong>Código:</strong> ${codigoSetor}</p>
-                                <p><strong>Período:</strong> ${props.periodo}</p>
-                                <p><strong>Índice:</strong> ${props.indice_nome}</p>
-                                <p><strong>Valor:</strong> ${valor.toFixed(3)}</p>
-                            </div>
-                        `;
-                        layer.bindPopup(popupContent);
-                        
-                        layer.on('mouseover', function(e) {
-                            this.setStyle({
-                                weight: 2,
-                                fillOpacity: 0.8
-                            });
-                        });
-                        
-                        layer.on('mouseout', function(e) {
-                            this.setStyle({
-                                weight: zoom < 10 ? 0.3 : 0.5,
+                    currentLayer = L.geoJSON(data, {
+                        style: function(feature) {
+                            const val = processarIndiceSetor(feature.properties, period, indice);
+                            feature.properties.indice_valor = val; // Cache
+                            return {
+                                fillColor: getColor(val),
+                                color: '#fff',
+                                weight: uf ? 0.5 : 0.2,
+                                opacity: 0.8,
                                 fillOpacity: 0.6
+                            };
+                        },
+                        onEachFeature: function(feature, layer) {
+                            const p = feature.properties;
+                            const nome = p.NM_MUNICIP || p.NM_MUN || 'N/A';
+                            const codigo = p.CD_SETOR || p.CD_MUN || 'N/A';
+                            const tipo = p.CD_SETOR ? 'Setor Censitário' : 'Município';
+                            
+                            layer.bindPopup(`
+                                <strong>${tipo}</strong><br>
+                                Local: ${nome}<br>
+                                Código: ${codigo}<br>
+                                Índice: ${p.indice_valor.toFixed(3)}
+                            `);
+                            
+                            layer.on('click', () => {
+                                document.getElementById('info-text').innerHTML = `
+                                    <strong>${nome}</strong> (${tipo})<br>
+                                    Código: ${codigo}<br>
+                                    ${getIndiceName(indice)}: <strong>${p.indice_valor.toFixed(3)}</strong>
+                                `;
                             });
-                        });
-                        
-                        layer.on('click', function(e) {
-                            updateInfoPanel({
-                                nome: nomeMunicipio,
-                                codigo_setor: codigoSetor,
-                                periodo: props.periodo,
-                                indice: props.indice_tipo,
-                                valor: valor
-                            });
-                        });
+                        }
+                    }).addTo(map);
+                    
+                    if (uf) {
+                        map.fitBounds(currentLayer.getBounds());
+                    } else if (!currentUF) { 
+                        map.setView([-15.793889, -47.882778], 4);
                     }
+                    
+                    currentUF = uf;
+                    updatePeriodInfo(period, indice);
+                    
+                    const count = data.features.length;
+                    document.getElementById('info-text').innerHTML = `Carregado: ${count} ${uf ? 'setores' : 'municípios'}.`;
+                })
+                .catch(err => {
+                    console.error(err);
+                    document.getElementById('info-text').innerHTML = '<span style="color: red;">Erro ao carregar dados. Verifique os arquivos.</span>';
                 });
-                
-                currentLayer.addTo(map);
-                updatePeriodInfo(period, indice);
-            });
         }
-        
-        /**
-         * Funcao para carregar dados do periodo e indice selecionados
-         * Usa carregamento progressivo baseado no viewport
-         * 
-         * @param {string} period - Periodo selecionado
-         * @param {string} indice - Indice selecionado
-         */
-        function loadData(period, indice) {
-            currentPeriod = period;
-            currentIndice = indice;
-            loadVisibleData(period, indice);
-        }
-        
-        // Recarrega dados visíveis quando o mapa é movido ou zoomado (com debounce)
-        // Agora apenas filtra os setores já carregados - não recarrega estados
-        map.on('moveend', function() {
-            if (loadTimeout) clearTimeout(loadTimeout);
-            loadTimeout = setTimeout(() => {
-                if (allGeoJSONData) {
-                    loadVisibleData(currentPeriod, currentIndice);
-                }
-            }, 300);
-        });
-        
-        map.on('zoomend', function() {
-            if (loadTimeout) clearTimeout(loadTimeout);
-            loadTimeout = setTimeout(() => {
-                if (allGeoJSONData) {
-                    loadVisibleData(currentPeriod, currentIndice);
-                }
-            }, 300);
-        });
-        
-        /**
-         * Atualiza o painel de informacoes com dados do setor clicado
-         * 
-         * @param {Object} properties - Propriedades do setor censitario
-         */
-        function updateInfoPanel(properties) {
-            document.getElementById('info-text').innerHTML = `
-                <strong>${properties.nome}</strong><br>
-                Índice ${getIndiceName(properties.indice)}: <strong>${properties.valor.toFixed(3)}</strong><br>
-                Código: ${properties.codigo_setor}
-            `;
-        }
-        
-        /**
-         * Atualiza informacoes sobre o periodo e indice visualizados
-         * 
-         * @param {string} period - Periodo atual
-         * @param {string} indice - Indice atual
-         */
+
         function updatePeriodInfo(period, indice) {
             const isForecast = parseInt(period) > 2022;
-            const badgeClass = isForecast ? 'badge-forecast' : 'badge-historical';
-            const badgeText = isForecast ? 'Previsão' : 'Histórico';
-            
-            document.getElementById('info-period').innerHTML = `
-                Período: <strong>${period}</strong> 
-                <span class="badge-period ${badgeClass}">${badgeText}</span><br>
-                Índice: <strong>${getIndiceName(indice)}</strong>
-            `;
+            const badge = isForecast ? '<span class="badge-period badge-forecast">Previsão</span>' : '<span class="badge-period badge-historical">Histórico</span>';
+            document.getElementById('info-period').innerHTML = `Período: <strong>${period}</strong> ${badge}<br>Índice: <strong>${getIndiceName(indice)}</strong>`;
         }
-        
-        // Event listeners para controles
-        document.getElementById('periodo').addEventListener('change', function() {
-            currentPeriod = this.value;
-            loadData(currentPeriod, currentIndice);
+
+        // Event Listeners
+        document.getElementById('uf-select').addEventListener('change', (e) => {
+            currentUF = e.target.value;
+            loadData(currentUF, currentPeriod, currentIndice);
         });
-        
-        document.getElementById('indice').addEventListener('change', function() {
-            currentIndice = this.value;
-            loadData(currentPeriod, currentIndice);
+
+        document.getElementById('periodo').addEventListener('change', (e) => {
+            currentPeriod = e.target.value;
+            loadData(currentUF, currentPeriod, currentIndice);
         });
-        
-        // Carrega dados iniciais
-        loadData(currentPeriod, currentIndice);
+
+        document.getElementById('indice').addEventListener('change', (e) => {
+            currentIndice = e.target.value;
+            loadData(currentUF, currentPeriod, currentIndice);
+        });
+
+        // Load inicial
+        loadData('', currentPeriod, currentIndice);
+
     </script>
 </body>
 </html>
-

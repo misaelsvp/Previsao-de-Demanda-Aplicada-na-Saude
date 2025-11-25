@@ -53,9 +53,10 @@ description: "Trabalho de Conclusão de Curso - Análise de Vulnerabilidade Soci
             <div class="col-md-3">
                 <label for="indice-grafico" class="form-label fw-semibold">Índice:</label>
                 <select id="indice-grafico" class="form-select">
+                    <option value="indice_vulnerabilidade_saude" selected>Índice de Vulnerabilidade em Saúde</option>
                     <option value="capital_humano">Capital Humano</option>
                     <option value="infraestrutura">Infraestrutura Urbana</option>
-                    <option value="saude" selected>Vulnerabilidade em Saúde</option>
+                    <option value="saude">Saúde</option>
                 </select>
             </div>
             <div class="col-md-3">
@@ -70,7 +71,7 @@ description: "Trabalho de Conclusão de Curso - Análise de Vulnerabilidade Soci
             <div class="col-md-3">
                 <label for="entidade-selecionada" class="form-label fw-semibold">Selecione:</label>
                 <select id="entidade-selecionada" class="form-select">
-                    <option value="">Carregando...</option>
+                    <option value="">Selecione um nível geográfico...</option>
                 </select>
             </div>
             <div class="col-md-3" id="filtro-adicional-container" style="display: none;">
@@ -204,7 +205,7 @@ description: "Trabalho de Conclusão de Curso - Análise de Vulnerabilidade Soci
                         <div class="d-flex align-items-start">
                             <div>
                                 <strong class="d-block mb-1">IPEA</strong>
-                                <small class="text-muted">Índice de Vulnerabilidade Social - Metodologia baseada no IPEA</small>
+                                <small class="text-muted">Índice de Vulnerabilidade Social - Metodologia inspirada no IPEA</small>
                             </div>
                         </div>
                     </div>
